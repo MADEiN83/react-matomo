@@ -23,7 +23,9 @@ class MatomoTracker {
   constructor(args: InstanceArgs) {
     this.args = args;
 
-    this.init();
+    if (!this.args.disabled) {
+      this.init();
+    }
   }
 
   private init = () => {
@@ -67,7 +69,7 @@ class MatomoTracker {
   trackPageView = async (documentTitle?: string) => {
     await this.wait();
 
-    if (this.args.disabled || !this.tracker) {
+    if (!this.tracker) {
       return;
     }
 
@@ -78,7 +80,7 @@ class MatomoTracker {
   trackEvent = async (args: TrackEventTypes) => {
     await this.wait();
 
-    if (this.args.disabled || !this.tracker) {
+    if (!this.tracker) {
       return;
     }
 
