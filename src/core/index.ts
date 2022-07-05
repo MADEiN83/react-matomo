@@ -8,6 +8,8 @@ type Tracker = {
     name?: string,
     value?: string
   ) => void;
+  setCustomUrl: (customUrl: string) => void;
+  setDocumentTitle: (documentTitle: string) => void;
 };
 
 class MatomoTracker {
@@ -51,6 +53,7 @@ class MatomoTracker {
       return;
     }
 
+    this.tracker.setCustomUrl(document.location.href);
     this.tracker.trackPageView(documentTitle || document.title);
   };
 
