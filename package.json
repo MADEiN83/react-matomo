@@ -24,7 +24,5 @@
   "files": [
     "/lib"
   ],
-  "dependencies": {
-    "@jonkoops/matomo-tracker": "^0.7.0"
-  }
+  "dependencies": {}
 }

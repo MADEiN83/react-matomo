@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@jonkoops/matomo-tracker@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@jonkoops/matomo-tracker/-/matomo-tracker-0.7.0.tgz#38bd15352cd6a2115eb863a9ba582a1c0f52fc32"
-  integrity sha512-ppCXiDaVytTQOP6hNZIBwjUph5IrGgDoQw4IF5sBoA3PBpMAc5tWtPExbVWTR5pJWpTcp11dv2M83n9pm7LpeQ==
-
 "@types/prop-types@*":
   version "15.7.5"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
