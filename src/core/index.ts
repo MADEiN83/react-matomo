@@ -1,7 +1,13 @@
-import { InstanceArgs } from "./matomo.types";
+import { InstanceArgs, TrackEventTypes } from "./matomo.types";
 
 type Tracker = {
-  trackPageView: (documentTitle: string) => {};
+  trackPageView: (documentTitle: string) => void;
+  trackEvent: (
+    category: string,
+    action: string,
+    name?: string,
+    value?: string
+  ) => void;
 };
 
 class MatomoTracker {
@@ -46,6 +52,16 @@ class MatomoTracker {
     }
 
     this.tracker.trackPageView(documentTitle || document.title);
+  };
+
+  trackEvent = async (args: TrackEventTypes) => {
+    await this.wait();
+
+    if (!this.tracker) {
+      return;
+    }
+
+    this.tracker.trackEvent(args.category, args.action, args.name, args.value);
   };
 
   private wait = (): Promise<void> => {

@@ -1,6 +1,6 @@
 {
   "name": "react-matomo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
@@ -11,7 +11,7 @@
     "build:cjs": "tsc --module commonjs --outDir lib/cjs"
   },
   "keywords": [],
-  "author": "",
+  "author": "Anthony DI STEFANO",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^18.0.14",
