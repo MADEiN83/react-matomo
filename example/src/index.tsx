@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
     <MatomoProvider
       value={createInstance({
-        url: "https://analytics.ffbad.org/",
+        url: "",
         siteId: 5,
         // userId: "UID76903202", // optional, default value: `undefined`.
         // trackerUrl: "https://LINK.TO.DOMAIN/tracking.php", // optional, default value: `${urlBase}matomo.php`
