@@ -10,4 +10,15 @@ export type MatomoInstance = {
   trackEvent: (args: TrackEventTypes) => void;
 };
 
-export type InstanceArgs = { url: string; siteId: number; userId?: number };
+export type InstanceArgs = {
+  url: string;
+  siteId: number;
+  userId?: string;
+  disabled?: boolean;
+  heartBeat?: {
+    active?: boolean;
+    seconds?: number;
+  };
+  linkTracking?: boolean;
+  domain?: string;
+};

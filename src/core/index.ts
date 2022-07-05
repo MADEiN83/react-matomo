@@ -10,6 +10,10 @@ type Tracker = {
   ) => void;
   setCustomUrl: (customUrl: string) => void;
   setDocumentTitle: (documentTitle: string) => void;
+  setUserId: (userId: string) => void;
+  setCookieDomain: (domain: string) => void;
+  enableHeartBeatTimer: (activeTimeInseconds: number) => void;
+  enableLinkTracking: (enabled: boolean) => void;
 };
 
 class MatomoTracker {
@@ -38,6 +42,20 @@ class MatomoTracker {
           self.args.url + "matomo.php",
           self.args.siteId
         );
+
+        if (self.args.userId) {
+          self.tracker.setUserId(self.args.userId);
+        }
+
+        if (self.args.domain) {
+          self.tracker.setCookieDomain(self.args.domain);
+        }
+
+        if (self.args.heartBeat && self.args.heartBeat.active) {
+          self.tracker.enableHeartBeatTimer(self.args.heartBeat.seconds || 15);
+        }
+
+        self.tracker.enableLinkTracking(self.args.linkTracking || true);
       }
     };
 
@@ -49,7 +67,7 @@ class MatomoTracker {
   trackPageView = async (documentTitle?: string) => {
     await this.wait();
 
-    if (!this.tracker) {
+    if (this.args.disabled || !this.tracker) {
       return;
     }
 
@@ -60,7 +78,7 @@ class MatomoTracker {
   trackEvent = async (args: TrackEventTypes) => {
     await this.wait();
 
-    if (!this.tracker) {
+    if (this.args.disabled || !this.tracker) {
       return;
     }
 
