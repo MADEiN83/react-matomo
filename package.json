@@ -1,6 +1,6 @@
 {
   "name": "react-matomo",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
@@ -10,9 +10,22 @@
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs"
   },
-  "keywords": [],
   "author": "Anthony DI STEFANO",
+  "homepage": "https://github.com/MADEiN83/react-matomo",
+  "bugs": {
+    "url": "https://github.com/MADEiN83/react-matomo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MADEiN83/react-matomo"
+  },
   "license": "ISC",
+  "keywords": [
+    "react",
+    "analytics",
+    "matomo",
+    "react-matomo"
+  ],
   "devDependencies": {
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.6",
